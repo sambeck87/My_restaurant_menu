@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :dishes
-  resources :categories
   resources :addresses
-  resources :restaurants
+  resources :restaurants do
+    resources :categories
+  end
 
   # resources :restaurants do
   #   resources :addresses
