@@ -5,6 +5,6 @@
 <br>
 
 <div>
-  <%= link_to "Show this address", @address %> |
-  <%= link_to "Back to addresses", addresses_path %>
+  <%= link_to "Show this address", restaurant_address_path(@address.restaurant_id, @address.id) %> |
+  <%= link_to "Back to addresses", restaurant_addresses_path %>
 </div>

@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
-  belongs_to :restaurants
+  belongs_to :restaurant
 
   validates :street, presence: true
   validates :city, presence: true
