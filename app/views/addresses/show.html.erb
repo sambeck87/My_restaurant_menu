@@ -3,8 +3,8 @@
 <%= render @address %>
 
 <div>
-  <%= link_to "Edit this address", edit_address_path(@address) %> |
-  <%= link_to "Back to addresses", addresses_path %>
+  <%= link_to "Edit this address", edit_restaurant_address_path(@address.restaurant_id, @address.id) %> |
+  <%= link_to "Back to addresses", restaurant_addresses_path %>
 
-  <%= button_to "Destroy this address", @address, method: :delete %>
+  <%= button_to "Destroy this address", restaurant_address_path, method: :delete %>
 </div>
