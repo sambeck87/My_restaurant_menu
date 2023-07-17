@@ -5,6 +5,8 @@ ruby "3.2.1"
 
 gem "devise"
 
+gem "foreman"
+
 gem "rubocop"
 
 gem "rswag"
