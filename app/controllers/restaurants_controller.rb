@@ -4,6 +4,11 @@ class RestaurantsController < ApplicationController
   # GET /restaurants or /restaurants.json
   def index
     @restaurants = Restaurant.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @restaurants }
+    end
   end
 
   # GET /restaurants/1 or /restaurants/1.json

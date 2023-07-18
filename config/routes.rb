@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1, defaults: {format: 'json'} do
-      resources :restaurants, only: %i[index show]
-    end
-  end
+  mount Rswag::Api::Engine => '/api-docs'
+  mount Rswag::Ui::Engine => '/api-docs'
   devise_for :users
   resources :restaurants do
     resources :addresses
     resources :categories do
       resources :dishes
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :restaurants do
+        get ':name', on: :collection, action: :show_by_name
+      end
     end
   end
 
