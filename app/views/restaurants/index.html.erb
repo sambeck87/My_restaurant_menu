@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Restaurants</h1>
+<h1><%= t('restaurant.title') %></h1>
 
 <div id="restaurants">
   <% @restaurants.each do |restaurant| %>
     <%= render restaurant %>
     <p>
-      <%= link_to "Show this restaurant", restaurant %>
+      <%= link_to t("restaurant.show"), restaurant_path(params[:locale], restaurant) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New restaurant", new_restaurant_path %>
+<%= link_to t('restaurant.new'), new_restaurant_path(params[:locale]) %>

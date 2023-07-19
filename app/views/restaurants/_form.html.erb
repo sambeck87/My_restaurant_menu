@@ -10,22 +10,22 @@
     </div>
   <% end %>
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label t('generics.name'), style: "display: block" %>
     <%= form.text_field :name %>
   </div>
   <div>
-    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.label t('restaurant.phone_number'), style: "display: block" %>
     <%= form.text_field :phone_number %>
   </div>
   <div>
-    <%= form.label :food, style: "display: block" %>
+    <%= form.label t('restaurant.type'), style: "display: block" %>
     <%= form.text_field :food %>
   </div>
   <div>
-    <%= form.label :image, style: "display: block" %>
+    <%= form.label t('restaurant.image'), style: "display: block" %>
     <%= form.text_field :image %>
   </div>
   <div>
-    <%= form.submit %>
+    <%= form.submit t('restaurant.new')%>
   </div>
 <% end %>
