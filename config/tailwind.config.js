@@ -8,10 +8,10 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
+    fontFamily: {
+      nunito: ['Nunito', sans-serif],
+      montserrat: ['Montserrat Alternates', sans-serif],
+      padauk: ['Padauk', sans-serif],
     },
   },
   plugins: [
