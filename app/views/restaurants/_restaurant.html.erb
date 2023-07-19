@@ -1,16 +1,23 @@
 <div id="<%= dom_id restaurant %>">
+
+<p>
+  <strong><%=t('restaurant.name')%></strong>
+  <%= restaurant.name %>
+</p>
+
+
   <p>
-    <strong>Phone number:</strong>
+    <strong><%=t('restaurant.phone_number')%></strong>
     <%= restaurant.phone_number %>
   </p>
 
   <p>
-    <strong>Type:</strong>
+    <strong><%=t('restaurant.type')%></strong>
     <%= restaurant.food %>
   </p>
 
   <p>
-    <strong>Image:</strong>
+    <strong><%=t('restaurant.image')%></strong>
     <%= restaurant.image %>
   </p>
 
