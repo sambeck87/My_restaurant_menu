@@ -1,0 +1,11 @@
+<div class='my-4 flex justify-around w-1/6'>
+  <% if cookies[:language] == 'en' %>
+    <%= form_tag(change_spanish_path, method: :post) do %>
+      <%= submit_tag('Español', class:'hover:bg-orange-300') %>
+    <% end %>
+  <%else%>
+    <%= form_tag(change_english_path, method: :post) do %>
+      <%= submit_tag('English', class:'hover:bg-orange-300') %>
+    <% end %>
+  <%end%>
+</div>
