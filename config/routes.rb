@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   mount Rswag::Ui::Engine => '/api-docs'
-  scope '/(:locale)', locale: /en|es/ do
+  post '/change_spanish', to: 'main#change_spanish', as: :change_spanish
+  post '/change_english', to: 'main#change_english', as: :change_english
     devise_for :users
     resources :restaurants do
       resources :addresses
@@ -19,5 +20,4 @@ Rails.application.routes.draw do
     end
 
     root "main#index"
-  end
 end

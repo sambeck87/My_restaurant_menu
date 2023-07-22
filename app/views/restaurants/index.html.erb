@@ -6,9 +6,9 @@
   <% @restaurants.each do |restaurant| %>
     <%= render restaurant %>
     <p>
-      <%= link_to t("restaurant.show"), restaurant_path(params[:locale], restaurant) %>
+      <%= link_to t("restaurant.show"), restaurant_path(restaurant) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to t('restaurant.new'), new_restaurant_path(params[:locale]) %>
+<%= link_to t('restaurant.new'), new_restaurant_path %>
