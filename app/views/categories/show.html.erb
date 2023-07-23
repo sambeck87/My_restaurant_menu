@@ -2,7 +2,18 @@
 
 <div>
   <%= link_to "Edit this category", edit_restaurant_category_path(@category.restaurant_id, @category.id) %> |
-  <%= link_to "Back to categories", restaurant_categories_path %>
+  <%= link_to "Back to categories", restaurant_path(params[:restaurant_id]) %>
 
   <%= button_to "Destroy this category", restaurant_category_path, method: :delete %>
 </div>
+<h1>Dishes</h1>
+<div id="dishes">
+  <% @dishes.each do |dish| %>
+    <%= render dish %>
+    <p>
+      <%= link_to "Show this dish", restaurant_category_dish_path(params[:restaurant_id], dish.category_id, dish.id) %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New dish", new_restaurant_category_dish_path(params[:restaurant_id], @category.id) %>
+<%= link_to t("generics.back"), restaurant_path(params[:restaurant_id]) %>

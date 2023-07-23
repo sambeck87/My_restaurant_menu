@@ -6,3 +6,4 @@
 
   <%= button_to "Destroy this dish", restaurant_category_dish_path, method: :delete %>
 </div>
+<%= link_to t("generics.back"), restaurant_category_path(params[:restaurant_id], params[:category_id])%>
