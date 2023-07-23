@@ -1,4 +1,8 @@
 en:
+  log_in:
+    title: "Log in"
+    remember: "Remember me"
+    forgot: "Forgot your password?"
   restaurant:
     title: "My Restaurants"
     new_title: "New Restaurant"
@@ -7,6 +11,11 @@ en:
     image: "Restaurant Image:"
     show: "Show This Restaurant"
     new: "Create New Restaurant"
+    update: "Update"
+    notices:
+      updated: "Restaurant was successfully updated"
+      created: "Restaurant was successfully created."
+      destroyed: "Restaurant was successfully destroyed."
   user:
     email: "E-mail"
     pass: "Password"
@@ -19,6 +28,7 @@ en:
     log_out: "Sign Out"
     sign_up: "Sign Up"
     sure?: "Are you sure?"
+    new: "Create"
   home:
     title: 'Create your menu easily'
     text1: "Introducing the innovative way to create easy and personalized restaurant menus! With our application, you can design appealing digital menus to share on social media or generate a unique QR code that allows your customers to access them effortlessly."
