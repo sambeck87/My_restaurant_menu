@@ -1,26 +1,32 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="bg-pink-950 pt-40 py-8 h-screen flex flex-col items-center font-padauk text-amber-500 font-extrabold">
+  <h2 class="font-montserrat text-2xl"><%= t('log_in.title') %></h2>
+  <div class="text-lg flex-grow">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field mb-9">
+        <%= f.label t('user.email') %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field mb-2">
+        <%= f.label t('user.pass') %><br />
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="field mb-9">
+          <%= f.check_box :remember_me %>
+          <%= f.label t('log_in.remember') %>
+        </div>
+      <% end %>
+      <div class="flex flex-row justify-center">
+        <%= f.submit t('generics.log_in'), class:"actions font-montserrat text-sm text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300" %>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to t("generics.sign_up"), new_registration_path(resource_name), class: "font-montserrat text-sm text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300" %><br />
+        <% end %>
+      </div>
+      <p class="text-center">
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to t("log_in.forgot"), new_password_path(resource_name) %><br />
+        <% end %>
+      </p>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions text-xs text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300">
-    <%= f.submit t('generics.log_in') %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
