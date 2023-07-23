@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants or /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html
@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/1 or /restaurants/1.json
   def show
+    @categories = Category.where(restaurant_id: params[:id])
   end
 
   # GET /restaurants/new
@@ -31,7 +32,7 @@ class RestaurantsController < ApplicationController
 
     respond_to do |format|
       if @restaurant.save
-        format.html { redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully created." }
+        format.html { redirect_to restaurant_url(@restaurant), notice: t("restaurant.notices.created") }
         format.json { render :show, status: :created, location: @restaurant }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +45,7 @@ class RestaurantsController < ApplicationController
   def update
     respond_to do |format|
       if @restaurant.update(restaurant_params)
-        format.html { redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully updated." }
+        format.html { redirect_to restaurant_url(@restaurant), notice: t("restaurant.notices.updated") }
         format.json { render :show, status: :ok, location: @restaurant }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +59,7 @@ class RestaurantsController < ApplicationController
     @restaurant.destroy
 
     respond_to do |format|
-      format.html { redirect_to restaurants_url, notice: "Restaurant was successfully destroyed." }
+      format.html { redirect_to restaurants_url, notice: t("restaurant.notices.destroyed") }
       format.json { head :no_content }
     end
   end
