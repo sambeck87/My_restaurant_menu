@@ -1,4 +1,8 @@
 es:
+  log_in:
+    title: "Iniciar sesión"
+    remember: "Recordar sesión"
+    forgot: "¿Olvidaste tu contraseña?"
   devise:
     confirmations:
       confirmed: "Tu correo electrónico ha sido confirmado exitosamente."
@@ -68,27 +72,38 @@ es:
     image: "Imagen del Restaurante:"
     show: "Mostrar este Restaurante"
     new: "Crear Nuevo Restaurante"
+    update: "Actualizar"
+    notices:
+      updated: "El restaurante fue actualizado exitósamente"
+      created: "El restaurante fue creado exitósamente"
+      destroyed: "El restaurante fue eliminado exitósamente"
   generics:
-    name: "Nombre"
+    name: "Nombre:"
     back: "Regresar"
     log_in: "Iniciar sesión"
     log_out: "Cerrar sesión"
     sign_up: "Crear Cuenta"
     sure?: "¿Estás seguro?"
+    new: "Crear"
   user:
     email: "Correo Electrónico"
     pass: "Contraseña"
     confirm_pass: "Confirmación de contraseña"
     min_characters: "Caracteres mínimo"
   activerecord:
+    models:
+      restaurant: 'Restaurante'
+    notices:
+      created: "¡%{model} fue creado exitosamente!"
+      destroyed: "¡%{model} fue eliminado exitosamente!"
+      updated: "¡%{model} fue actualizado exitosamente!"
+    attributes:
+      restaurant:
+        food: "Tipo de restaurante "
+        name: "Nombre "
     errors:
-      models:
-        restaurant:
-          attributes:
-            food:
-              blank: "El tipo de restaurante es obligatorio, favor de llenar el formulario correctamente"
-            name:
-              blank: "El nombre es obligatorio, favor de llenar el formulario correctamente"
+      messages:
+        blank: "es un campo obligatorio"
   home:
     title: 'Crea tu menú facilmente'
     text1: "¡Presentamos la innovadora forma de diseñar tus menús de restaurantes de manera fácil y personalizada! Con nuestra aplicación, podrás crear atractivos menús digitales para compartir en redes sociales o generar un código QR exclusivo que permitirá a tus clientes acceder a ellos de manera rápida y sencilla."

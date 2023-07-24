@@ -8,3 +8,18 @@
 
   <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
 </div>
+
+<div>
+<h1>Categories</h1>
+<div id="categories">
+  <% @categories.each do |category| %>
+    <%= render category %>
+    <p>
+      <%= link_to "Show this category", restaurant_category_path(category.restaurant_id, category.id) %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New category", new_restaurant_category_path(params[:id]) %>
+</div>
+<%= link_to t("generics.back"), restaurants_path %>
+
