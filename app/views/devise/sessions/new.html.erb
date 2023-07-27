@@ -1,14 +1,14 @@
 <div class="bg-pink-950 pt-40 py-8 h-screen flex flex-col items-center font-padauk text-amber-500 font-extrabold">
   <h2 class="font-montserrat text-2xl mb-10"><%= t('log_in.title') %></h2>
-  <div class="text-lg flex-grow">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:"flex flex-col w-full"}) do |f| %>
-      <div class="field mb-9">
+  <div class="text-lg flex-grow w-full">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class:"flex flex-col items-center"}) do |f| %>
+      <div class="field mb-9 w-[90%]">
         <%= f.label t('user.email') %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full" %>
       </div>
-      <div class="field mb-2">
+      <div class="field mb-2 w-[90%]">
         <%= f.label t('user.pass') %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.password_field :password, autocomplete: "current-password", class:"w-full" %>
       </div>
       <% if devise_mapping.rememberable? %>
         <div class="field mb-9">
@@ -16,7 +16,7 @@
           <%= f.label t('log_in.remember') %>
         </div>
       <% end %>
-      <div class="flex flex-row justify-around mb-4">
+      <div class="flex flex-row justify-around mb-4 w-full">
         <%= f.submit t('generics.log_in'), class:"actions font-montserrat text-sm text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300" %>
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
           <%= link_to t("generics.sign_up"), new_registration_path(resource_name), class: "font-montserrat text-sm text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300" %>
