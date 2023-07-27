@@ -3,7 +3,7 @@
     <%= form_tag(change_spanish_path, method: :post) do %>
       <%= submit_tag('Español', class:'hover:bg-orange-300') %>
     <% end %>
-  <%else%>
+  <%elsif cookies[:language] == 'es'%>
     <%= form_tag(change_english_path, method: :post) do %>
       <%= submit_tag('English', class:'hover:bg-orange-300') %>
     <% end %>
