@@ -1,27 +1,32 @@
-<h2><%= t('generics.sign_up')%></h2>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= f.label t('generics.name') %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-  <div class="field">
-    <%= f.label t('user.email') %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div class="field">
-    <%= f.label t('user.pass') %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length%> <%= t('user.min_characters')%>)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.label t('user.confirm_pass') %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit t('generics.sign_up') %>
-  </div>
-<% end %>
-<%= render "devise/shared/links" %>
+<div class="bg-pink-950 pt-40 py-8 h-screen flex flex-col items-center font-padauk text-amber-500 font-extrabold">
+  <h2><%= t('generics.sign_up')%></h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class:" flex flex-col items-center"}) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field mb-9 w-[90%]">
+      <%= f.label t('generics.name') %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"w-full" %>
+    </div>
+    <div class="field mb-9 w-[90%]">
+      <%= f.label t('user.email') %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"w-full" %>
+    </div>
+    <div class="field mb-9 w-[90%]">
+      <%= f.label t('user.pass') %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length%> <%= t('user.min_characters')%>)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class:"w-full" %>
+    </div>
+    <div class="field mb-9 w-[90%]">
+      <%= f.label t('user.confirm_pass') %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"w-full" %>
+    </div>
+    <div class="flex flex-row justify-around mb-4 w-full"
+>
+      <div class="actions  font-montserrat text-sm text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300">
+        <%= f.submit t('generics.sign_up') %>
+      </div>
+      <%= link_to t("generics.log_in"), new_session_path(resource_name), class: "font-montserrat text-xs text-white font-bold bg-red-600 px-2 py-1 rounded border-double border-4 border-orange-500 hover:border-red-600 hover:bg-orange-300" %>
+    </div>
+  <% end %>
+</div>
