@@ -1,9 +1,5 @@
-<h1><%= t('restaurant.new_title') %></h1>
-
-<%= render "form", restaurant: @restaurant %>
-
-<br>
-
-<div>
-  <%= link_to t('generics.back'), restaurants_path %>
+<div class="bg-pink-950 pt-40 py-8 h-screen flex- flex-col items-center font-padauk text-amber-500 font-extrabold">
+  <h1 class="w-full text-center text-2xl font-bold mb-3"><%= t('restaurant.new_title') %></h1>
+  <%= render "form", restaurant: @restaurant %>
+  <br>
 </div>
